@@ -27,10 +27,10 @@ cuv = 0
 
 while cuv < int(numar_cuvinte_de_verificat): # Luam pe rand fiecare cuvant din fisier
     stare_curenta = stare_initiala
-    limbaj = f.readline().strip()
-    for i in range(len(limbaj)): # Luam pe rand fiecare simbol din cuvant
-        litera = limbaj[i]
-        if i != len(limbaj) - 1: # In cazul in care nu am ajuns la finalul cuvantului, verificam daca din starea curenta avem drum in alta stare
+    cuvant = f.readline().strip()
+    for i in range(len(cuvant)): # Luam pe rand fiecare simbol din cuvant
+        litera = cuvant[i]
+        if i != len(cuvant) - 1: # In cazul in care nu am ajuns la finalul cuvantului, verificam daca din starea curenta avem drum in alta stare
             ok = 0
             for j in dictionar.get(stare_curenta):
                 if litera in j.keys():
@@ -54,6 +54,3 @@ while cuv < int(numar_cuvinte_de_verificat): # Luam pe rand fiecare cuvant din f
                         w.write("CUVANT RESPINS")
                         w.write("\n")
             cuv += 1
-
-f.close()
-w.close()
